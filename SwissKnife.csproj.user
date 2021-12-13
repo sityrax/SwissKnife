@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="View\InputRequest.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\LanguageSettings.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ThemeSettings.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Update="Languages\lang.ru-RU.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="View\InputRequest.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VisualStyle\CommonStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\LanguageSettings.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ThemeSettings.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VisualStyle\Colorize.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VisualStyle\IceTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VisualStyle\NeonTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VisualStyle\Fonts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VisualStyle\WindowStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

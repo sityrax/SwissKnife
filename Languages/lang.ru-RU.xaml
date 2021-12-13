@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:v="clr-namespace:System;assembly=mscorlib">
+    
+
+    <!-- Tab Titles-->
+    <v:String x:Key="t_tabsettings">Настройки</v:String>
+    <v:String x:Key="t_tabrules">Правила</v:String>
+    <v:String x:Key="t_tabassemble">Сборка</v:String>
+    <v:String x:Key="t_maintitle">SWISS KNIFE</v:String>
+    <v:String x:Key="t_closewindow">Закрыть окно</v:String>
+    <v:String x:Key="t_minimizewindow">Свернуть окно</v:String>
+    <v:String x:Key="t_foregroundwindow">Установить на передний план</v:String>
+    <v:String x:Key="t_fullscreentooltip">Временно недоступно</v:String>
+
+
+    <!-- Fast Assemble-->
+    <v:String x:Key="t_construct">Собрать</v:String>
+    <v:String x:Key="t_changerule">Сменить правило</v:String>
+    <v:String x:Key="t_secondscreen">Второй экран</v:String>
+    <v:String x:Key="t_ruleslist">Список правил</v:String>
+    <v:String x:Key="t_removerule">Удалить правило</v:String>
+
+    <v:String x:Key="t_inputtext">Введите текст...</v:String>
+    <v:String x:Key="t_outputtext">Готовый текст появится здесь...</v:String>
+
+
+    <!-- Settings-->
+    <v:String x:Key="t_language">Язык</v:String>
+    <v:String x:Key="t_theme">Тема</v:String>
+
+    <v:String x:Key="t_languagetooltip">Сменить язык</v:String>
+    <v:String x:Key="t_themetooltip">Сменить тему</v:String>
+    <v:String x:Key="t_titlelanguage">Выбрать язык:</v:String>
+    <v:String x:Key="t_titletheme">Выбрать тему:</v:String>
+    
+    
+    <!-- Rules Constructor-->
+    <v:String x:Key="t_makerule">Создать правило</v:String>
+    <v:String x:Key="t_marktheword">Поставить метку</v:String>
+    <v:String x:Key="t_unmarktheWord">Убрать метку</v:String>
+    <v:String x:Key="t_assignseparator">Назначить разделитель</v:String>
+    <v:String x:Key="t_openlist">Открыть файл</v:String>
+    <v:String x:Key="t_loadrules">Загрузить правила</v:String>
+    <v:String x:Key="t_saverules">Сохранить правила</v:String>
+    <v:String x:Key="t_dropfilehere">ДРОП ФАЙЛ ХИР</v:String>
+
+    
+    <!-- Input Request-->
+    <v:String x:Key="t_inputnamerequest">Введите имя для правила:</v:String>
+    <v:String x:Key="t_inputseparator">Введите разделитель для вводимого текста:</v:String>
+    <v:String x:Key="t_acceptrequest">Принять</v:String>
+
+
+</ResourceDictionary>

@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:v="clr-namespace:System;assembly=mscorlib">
+    
+    
+	<!-- Tab Titles-->
+    <v:String x:Key="t_tabassemble">TextBuilder</v:String>
+    <v:String x:Key="t_tabsettings">Settings</v:String>
+    <v:String x:Key="t_tabrules">Rules</v:String>
+    <v:String x:Key="t_maintitle">SWISS KNIFE</v:String>
+    <v:String x:Key="t_closewindow">Close the window</v:String>
+    <v:String x:Key="t_minimizewindow">Minimize the window</v:String>
+    <v:String x:Key="t_foregroundwindow">Set to foreground</v:String>
+    <v:String x:Key="t_fullscreentooltip">Temporarily unavailable</v:String>
+
+
+    <!-- Fast Assemble-->
+    <v:String x:Key="t_construct">Rebuild</v:String>
+	<v:String x:Key="t_changerule">Change rule</v:String>
+    <v:String x:Key="t_secondscreen">Second screen</v:String>
+    <v:String x:Key="t_ruleslist">Rules list</v:String>
+    <v:String x:Key="t_removerule">Remove rule</v:String>
+
+    <v:String x:Key="t_inputtext">Enter the text...</v:String>
+    <v:String x:Key="t_outputtext">Output will appear here...</v:String>
+
+
+    <!-- Settings-->
+    <v:String x:Key="t_language">Language</v:String>
+    <v:String x:Key="t_theme">Theme</v:String>
+    
+    <v:String x:Key="t_languagetooltip">Change language</v:String>
+    <v:String x:Key="t_themetooltip">Change theme</v:String>
+    <v:String x:Key="t_titlelanguage">Choose language:</v:String>
+    <v:String x:Key="t_titletheme">Choose theme:</v:String>
+
+
+    <!-- Rules Constructor-->
+    <v:String x:Key="t_makerule">Make rule</v:String>
+    <v:String x:Key="t_marktheword">Mark</v:String>
+    <v:String x:Key="t_unmarktheWord">Unmark</v:String>
+    <v:String x:Key="t_assignseparator">Assign separator</v:String>
+    <v:String x:Key="t_openlist">Open file</v:String>
+    <v:String x:Key="t_loadrules">Load rules</v:String>
+    <v:String x:Key="t_saverules">Save rules</v:String>
+    <v:String x:Key="t_dropfilehere">DROP FILE HERE</v:String>
+
+    
+    <!-- Input Request-->
+    <v:String x:Key="t_inputnamerequest">Enter the name of rule:</v:String>
+    <v:String x:Key="t_inputseparator">Enter the separator for input text:</v:String>
+    <v:String x:Key="t_acceptrequest">Accept</v:String>
+    
+
+</ResourceDictionary>

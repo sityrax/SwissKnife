@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    
+    <!--/////////////////COMMON FONTS LIBRARY/////////////////-->
+
+    <TextBlock FontFamily="{DynamicResource TextStyle1}"
+               x:Key="TextStyle" />
+
+    <FontFamily x:Key="TextStyle1">Bahnschrift Condensed</FontFamily>
+    <FontFamily x:Key="TextStyle2">Segoe UI</FontFamily>
+    <FontFamily x:Key="TextStyle3">Bebas Neue</FontFamily>
+    <FontFamily x:Key="TextStyle4">Consolas</FontFamily>
+
+</ResourceDictionary>

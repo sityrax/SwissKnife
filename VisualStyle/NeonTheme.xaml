@@ -1,0 +1,160 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    
+    <LinearGradientBrush x:Key="GradLine"
+                         StartPoint="0,0"
+                         EndPoint="1,1">
+        <GradientStop Offset="0"
+                      Color="Aquamarine" />
+        <GradientStop Offset="1.5"
+                      Color="Aquamarine" />
+    </LinearGradientBrush>
+    
+    
+    <!--/////////////////COMMON TABITEM STYLE/////////////////-->
+    <Style x:Key="TabItemCustom"
+           TargetType="{x:Type TabItem}">
+        <Setter Property="Width"
+                Value="550" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid>
+                        <Border Background="Transparent"
+                                BorderBrush="Transparent" />
+                        <TextBlock x:Name="textInside"
+                                   Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Header}"
+                                   Foreground="{StaticResource BlackButtonContent}"
+                                   Margin="4,0,4,0" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TabItem.IsSelected"
+                                 Value="True">
+                            <Setter TargetName="textInside"
+                                    Property="TextBlock.Foreground"
+                                    Value="Aquamarine" />
+                        </Trigger>
+                        <DataTrigger Binding="{Binding ElementName=textInside, Path=IsMouseOver}"
+                                     Value="true">
+                            <Setter TargetName="textInside"
+                                    Property="TextBlock.Foreground"
+                                    Value="GhostWhite" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--/////////////////COMMON BUTTON STYLE/////////////////-->
+    <Style x:Key="CommonButtonCustom"
+           TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Button.Foreground"
+                    Value="{StaticResource BlackButtonContent}">
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="ShapeStyle"
+                                    CornerRadius="4"
+                                    BorderBrush="{StaticResource HeaderBack}"
+                                    BorderThickness="1"
+                                    Background="{StaticResource HeaderBack}">
+                                <Border.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard RepeatBehavior="Forever"
+                                                        AutoReverse="True">
+                                                <ColorAnimation Storyboard.TargetProperty="BorderBrush.GradientStops[0].Color"
+                                                                Storyboard.TargetName="ShapeStyle"
+                                                                Duration="0:0:1"
+                                                                To="Aqua" />
+                                                <ColorAnimation Storyboard.TargetProperty="BorderBrush.GradientStops[1].Color"
+                                                                Storyboard.TargetName="ShapeStyle"
+                                                                Duration="0:0:1"
+                                                                To="Aquamarine" />
+                                                <ColorAnimation Storyboard.TargetProperty="BorderBrush.GradientStops[1].Color"
+                                                                Storyboard.TargetName="ShapeStyle"
+                                                                BeginTime="0:0:1"
+                                                                Duration="0:0:1"
+                                                                To="Aqua" />
+                                                <ColorAnimation Storyboard.TargetProperty="BorderBrush.GradientStops[0].Color"
+                                                                Storyboard.TargetName="ShapeStyle"
+                                                                BeginTime="0:0:1"
+                                                                Duration="0:0:1"
+                                                                To="Aquamarine" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="BorderBrush.GradientStops[0].Color"
+                                                                Storyboard.TargetName="ShapeStyle"
+                                                                Duration="0:0:1"
+                                                                To="{StaticResource HeaderBackColor}" />
+                                                <ColorAnimation Storyboard.TargetProperty="BorderBrush.GradientStops[1].Color"
+                                                                Storyboard.TargetName="ShapeStyle"
+                                                                Duration="0:0:1"
+                                                                To="{StaticResource HeaderBackColor}" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Border.Triggers>
+                            </Border>
+                            <ContentPresenter x:Name="content"
+                                              Content="{TemplateBinding Content}"
+                                              IsHitTestVisible="False"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsPressed"
+                                     Value="True">
+                                <Setter TargetName="ShapeStyle"
+                                        Property="Background"
+                                        Value="{StaticResource GradLine}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="Button.IsPressed"
+                     Value="True">
+                <Setter Property="Foreground"
+                        Value="{StaticResource HeaderBack}" />
+            </Trigger>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever"
+                                    AutoReverse="True">
+                            <ColorAnimation Storyboard.TargetProperty="Foreground.Color"
+                                            Duration="0:0:1"
+                                            To="Aquamarine" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ColorAnimation Storyboard.TargetProperty="Foreground.Color"
+                                        Duration="0:0:1"
+                                        To="{StaticResource BlackButtonColor}" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+    <!--/////////////////COMMON BUTTON STYLE/////////////////-->
+
+</ResourceDictionary>

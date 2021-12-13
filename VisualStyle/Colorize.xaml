@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    
+    <!--/////////////////COMMON COLOR STYLE LIBRARY/////////////////-->
+
+    <SolidColorBrush x:Key="WindowMainBackColor"
+                     Color="#FF3C3C3C" />
+    
+    <SolidColorBrush x:Key="BlackButtonContent"
+                     Color="#252526" />
+    <Color x:Key="BlackButtonColor">#252526</Color>
+
+
+    <LinearGradientBrush x:Key="GradLineHighlight"
+                         Opacity="0.75"
+                         StartPoint="0,0"
+                         EndPoint="1,1">
+        <GradientStop Offset="0"
+                      Color="aqua" />
+        <GradientStop Offset="1.5"
+                      Color="Aquamarine" />
+    </LinearGradientBrush>
+
+
+    <LinearGradientBrush x:Key="Transparent"
+                         StartPoint="0,0"
+                         EndPoint="0,1">
+        <GradientStop Offset="0"
+                      Color="Transparent" />
+        <GradientStop Offset="1"
+                      Color="Transparent" />
+    </LinearGradientBrush>
+
+
+    <LinearGradientBrush x:Key="HeaderBack"
+                         StartPoint="0,0"
+                         EndPoint="0,1">
+        <GradientStop Offset="0"
+                      Color="#FF333333" />
+        <GradientStop Offset="1"
+                      Color="#FF333333" />
+    </LinearGradientBrush>
+    <Color x:Key="HeaderBackColor">#FF333333</Color>
+
+
+    <LinearGradientBrush x:Key="HeaderButton"
+                         StartPoint="0,0"
+                         EndPoint="0,1">
+        <GradientStop Offset="0"
+                      Color="#3F3F41" />
+    </LinearGradientBrush>
+
+</ResourceDictionary>

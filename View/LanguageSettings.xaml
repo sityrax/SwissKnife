@@ -1,0 +1,42 @@
+﻿<Page x:Class="SwissKnife.LanguageSettings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      xmlns:local="clr-namespace:SwissKnife"
+      mc:Ignorable="d"
+      Title="LanguageSettings"
+      FontFamily="{Binding Source={StaticResource TextStyle}, Path=FontFamily}"
+      FontSize="16">
+
+    <!--///////////////////////////////RESOURCES///////////////////////////////-->
+    <Page.Resources>
+        <local:CommonViewModel x:Key="commonViewModel" />
+    </Page.Resources>
+    <!--///////////////////////////////RESOURCES///////////////////////////////-->
+    
+    <Grid>
+        <StackPanel>
+        <TextBlock Text="{DynamicResource t_titlelanguage}"
+                   Foreground="DimGray"
+                   FontSize="14" />
+            <ComboBox x:Name="LanguageMenu"
+                      Height="25"
+                      Margin="0,5,0,15"
+                      ToolTip="{DynamicResource t_languagetooltip}"
+                      Background="#FF3C3C3C">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding Source={StaticResource commonViewModel}, Path=ChangeLanguage}"
+                                               PassEventArgsToCommand="True" />
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="Loaded">
+                        <i:InvokeCommandAction Command="{Binding Source={StaticResource commonViewModel}, Path=LanguageLoaded}"
+                                               CommandParameter="{Binding ElementName=LanguageMenu}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</Page>
