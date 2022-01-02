@@ -167,8 +167,8 @@ namespace SwissKnife
         {
             if (args.Changes.Count == 1)
             {
-                List<TextChange> list = new List<TextChange>(args.Changes);  //Укутываем колекцию.
-                var marksCollection = Edited.MarksCollection;               //Кэшируем ссылку на колекцию.
+                List<TextChange> list = new List<TextChange>(args.Changes);  //Укутываем коллекцию.
+                var marksCollection = Edited.MarksCollection;               //Кэшируем ссылку на коллекцию.
 
                 GetSelectionPosition(out int markLength, out int markIndex);
 

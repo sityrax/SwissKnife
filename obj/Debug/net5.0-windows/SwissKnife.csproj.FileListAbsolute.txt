@@ -40,3 +40,4 @@ C:\Users\sitYrax\Desktop\SwissKnife\obj\Debug\net5.0-windows\SwissKnife.csproj.C
 C:\Users\sitYrax\Desktop\SwissKnife\obj\Debug\net5.0-windows\SwissKnife.csproj.CopyComplete
 C:\Users\sitYrax\Desktop\SwissKnife\obj\Debug\net5.0-windows\SwissKnife.dll
 C:\Users\sitYrax\Desktop\SwissKnife\obj\Debug\net5.0-windows\SwissKnife.genruntimeconfig.cache
+C:\Users\sitYrax\Desktop\SwissKnife\obj\Debug\net5.0-windows\SwissKnife.csproj.AssemblyReference.cache

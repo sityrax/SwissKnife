@@ -15,8 +15,8 @@ namespace SwissKnife
         /// <summary>
         /// Themes collection.
         /// </summary>
-        public static List<ThemeHolder> Themes { get => t_themes; }
-        private static List<ThemeHolder> t_themes = new List<ThemeHolder>();
+        public static List<ThemeHolder> Themes { get => themes; }
+        private static List<ThemeHolder> themes = new List<ThemeHolder>();
 
         ResourceDictionary ThemeDictionary { get; }
         public string Name { get; set; }
@@ -51,9 +51,9 @@ namespace SwissKnife
 
         static ThemeHolder()
         {
-            t_themes.Clear();
-            t_themes.Add(("Neon", Colors.Aquamarine));
-            t_themes.Add(("Ice", Colors.Aqua));
+            themes.Clear();
+            themes.Add(("Neon", Colors.Aquamarine));
+            themes.Add(("Ice", Colors.Aqua));
         }
 
 
