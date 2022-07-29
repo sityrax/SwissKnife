@@ -77,12 +77,14 @@ namespace SwissKnife
                 RichBoxEditor.Selection.ApplyPropertyValue(TextElement.BackgroundProperty, new SolidColorBrush(markColorBackground));
                 RichBoxEditor.Selection.ApplyPropertyValue(TextElement.ForegroundProperty, new SolidColorBrush(markColorForeground));
 
+#if DEBUG
                 StringBuilder message = new StringBuilder();
                 foreach (var item in Edited.MarksCollection)
                 {
                     message.Append(item.index.ToString() + ", ");
                 }
                 MessageBox.Show(message.ToString());
+#endif
             }
             else
                 MessageBox.Show("Pleace, import or print a text");
