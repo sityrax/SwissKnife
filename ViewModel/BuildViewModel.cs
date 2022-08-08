@@ -33,7 +33,18 @@ namespace SwissKnife
             get
             {
                 return inputDrop ??
-                    (inputDrop = new EventControl(obj => { InputDrop(obj as DragEventArgs); }));    //TODO: Doesn't work, why?
+                    (inputDrop = new EventControl(obj => { InputDrop(obj as DragEventArgs); }));
+            }
+        }
+
+
+        private EventControl dragEnterFile;
+        public EventControl DragEnterFile
+        {
+            get
+            {
+                return dragEnterFile ??
+                    (dragEnterFile = new EventControl(obj => { DragEnterFile(obj as DragEventArgs); }));
             }
         }
 

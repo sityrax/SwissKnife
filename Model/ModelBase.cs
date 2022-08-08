@@ -77,12 +77,20 @@ namespace SwissKnife
         {
             if(e is not null)
             {
-            string[] filePath = (string[])e.Data.GetData(DataFormats.FileDrop);
-            int removeIndex = Path.GetFileName(filePath[0]).LastIndexOf('.');
-            string inputText = Path.GetFileName(filePath[0]).Remove(removeIndex);
-            Clipboard.SetText(inputText);
-            InputTextChangedEvent?.Invoke(inputText);
-            firstStart = false;
+               string[] filePath = (string[])e.Data.GetData(DataFormats.FileDrop);
+               string readText = File.ReadAllText(filePath[0]);
+               InputTextChangedEvent?.Invoke(readText);
+               firstStart = false;
+            }
+        }
+
+
+        internal static void DragEnterFile(DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effects = DragDropEffects.Copy;
+                e.Handled = true;
             }
         }
 

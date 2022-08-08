@@ -73,14 +73,14 @@
                         Height="340"
                         Background="{x:Null}"
                         BorderBrush="{x:Null}">
-                
-                
+
                 <TabItem Header="{DynamicResource t_tabassemble}"
                          Style="{DynamicResource TabItemCustom}"
                          Width="Auto"
                          Height="25"
                          Padding="0,5,0,0">
                     <Grid>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="10" />
                             <RowDefinition />
@@ -93,12 +93,11 @@
                                 <ColumnDefinition Width="300*" />
                                 <ColumnDefinition Width="100*" />
                             </Grid.ColumnDefinitions>
-
+                            
                             <Grid Grid.Column="1">
                                 <StackPanel x:Name="stackPanelButton"
                                             VerticalAlignment="Stretch"
                                             Margin="0,20,20,0">
-
                                     <Button Name="Rebuild"
                                             Style="{DynamicResource CommonButtonCustom}"
                                             Margin="0,0,0,10"
@@ -144,50 +143,95 @@
                             </Grid>
 
                             <Grid>
-                                <TextBox x:Name="InputText"
-                                         Height="50"
-                                         VerticalAlignment="Top"
-                                         Margin="25,20,20,0"
-                                         AllowDrop="False"
-                                         TextWrapping="Wrap"
-                                         Text="{Binding Source={StaticResource buildViewModel}, Path=InputText}">
-                                    <i:Interaction.Triggers>
-                                        <i:EventTrigger EventName="GotFocus">
-                                            <i:InvokeCommandAction Command="{Binding Source={StaticResource buildViewModel}, Path=InputFocus}" />
-                                        </i:EventTrigger>
-                                        <i:EventTrigger EventName="Drop">
-                                            <i:InvokeCommandAction Command="{Binding Source={StaticResource buildViewModel}, Path=InputDrop}"
-                                                                   PassEventArgsToCommand="True" />
-                                        </i:EventTrigger>
-                                    </i:Interaction.Triggers>
-                                </TextBox>
-                                <TextBox x:Name="OutputText"
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.4*"
+                                                   MinHeight="80"/>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="*"
+                                                   MinHeight="50"/>
+                                </Grid.RowDefinitions>
+
+                                <GridSplitter Grid.Row="1"
+                                              ShowsPreview="False"
+                                              Height="5"
+                                              HorizontalAlignment="Stretch"
+                                              VerticalAlignment="center"
+                                              Margin="15,10">
+                                    <GridSplitter.Background>
+                                        <DrawingBrush TileMode="Tile"
+                                                      Opacity="75"
+                                                      Viewport="0,0,0.05,1">
+                                            <DrawingBrush.Drawing>
+                                                <DrawingGroup>
+                                                    <GeometryDrawing Brush="{StaticResource WindowMainBackColor}">
+                                                        <GeometryDrawing.Geometry>
+                                                            <RectangleGeometry RadiusX="0.1"
+                                                                               RadiusY="0.1"
+                                                                               Rect="2,1,3,1" />
+                                                        </GeometryDrawing.Geometry>
+                                                    </GeometryDrawing>
+                                                    <GeometryDrawing Brush="{StaticResource BlackButtonContent}">
+                                                        <GeometryDrawing.Geometry>
+                                                            <RectangleGeometry RadiusX="0.1"
+                                                                               RadiusY="0.1"
+                                                                               Rect="1,1,1.5,1" />
+                                                        </GeometryDrawing.Geometry>
+                                                    </GeometryDrawing>
+                                                </DrawingGroup>
+                                            </DrawingBrush.Drawing>
+                                        </DrawingBrush>
+                                    </GridSplitter.Background>
+                                </GridSplitter>
+
+                                <Grid Grid.Row="0">
+                                    <TextBox x:Name="InputText"
+                                             MinHeight="50"
+                                             VerticalAlignment="Top"
+                                             VerticalScrollBarVisibility="Auto"
+                                             Margin="25,20,20,10"
+                                             AllowDrop="True"
+                                             TextWrapping="Wrap"
+                                             Text="{Binding Source={StaticResource buildViewModel}, Path=InputText}">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="GotFocus">
+                                                <i:InvokeCommandAction Command="{Binding Source={StaticResource buildViewModel}, Path=InputFocus}" />
+                                            </i:EventTrigger>
+                                            <i:EventTrigger EventName="PreviewDrop">
+                                                <i:InvokeCommandAction Command="{Binding Source={StaticResource buildViewModel}, Path=InputDrop}"
+                                                                       PassEventArgsToCommand="True" />
+                                            </i:EventTrigger>
+                                            <i:EventTrigger EventName="PreviewDragOver">
+                                                <i:InvokeCommandAction Command="{Binding Source={StaticResource buildViewModel}, Path=DragEnterFile}"
+                                                                       PassEventArgsToCommand="True" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </TextBox>
+                                </Grid>
+                                <Grid Grid.Row="2">
+                                    <TextBox x:Name="OutputText"
                                          Text="{Binding Source={StaticResource buildViewModel}, Path=OutputText}"
                                          VerticalAlignment="Top"
                                          VerticalScrollBarVisibility="Auto"
-                                         MaxHeight="230"
-                                         Margin="35,80,20,10"
-                                         AllowDrop="True"
+                                         MinHeight="20"
+                                         Margin="35,10,20,10"
                                          TextWrapping="WrapWithOverflow" />
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
                 </TabItem>
-                
 
                 <TabItem Header="{DynamicResource t_tabrules}"
                          Style="{DynamicResource TabItemCustom}"
                          Width="Auto"
                          Height="25"
                          Padding="0,5,0,0">
-                    <Grid 
-                          HorizontalAlignment="Center">
+                    <Grid HorizontalAlignment="Center">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="4*" />
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="0.3*"/>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="0.3*" />
                         </Grid.RowDefinitions>
-
                         <StackPanel Orientation="Horizontal"
                                     HorizontalAlignment="Center"
                                     Margin="0,5,0,0">
@@ -249,7 +293,6 @@
                             </Grid>
 
                             <StackPanel Margin="5,10,5,10">
-                                
                                 <Button Name="OpenFile"
                                         Style="{DynamicResource SettingsButton}"
                                         Margin="5"
@@ -258,10 +301,10 @@
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
                                         Command="{Binding Source={StaticResource rulesViewModel}, Path=OpenFile}">
-                                    <TextBlock Text="{DynamicResource t_openlist}" 
+                                    <TextBlock Text="{DynamicResource t_openlist}"
                                                TextWrapping="Wrap"
                                                TextAlignment="Center"
-                                               Margin="5,0,5,0"/>
+                                               Margin="5,0,5,0" />
                                 </Button>
 
                                 <Button Name="LoadRule"
@@ -272,11 +315,11 @@
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Top"
                                         Command="{Binding Source={StaticResource settingsViewModel}, Path=RulesPresetLoad}">
-                                    <TextBlock Text="{DynamicResource t_loadrules}" 
+                                    <TextBlock Text="{DynamicResource t_loadrules}"
                                                TextAlignment="Center"
-                                               TextWrapping="Wrap"/>
+                                               TextWrapping="Wrap" />
                                 </Button>
-
+                                
                                 <Button Name="SaveRules"
                                         Style="{DynamicResource SettingsButton}"
                                         Margin="5"
@@ -285,31 +328,31 @@
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Top"
                                         Command="{Binding Source={StaticResource rulesViewModel}, Path=RulesPresetSave}">
-                                    <TextBlock Text="{DynamicResource t_saverules}" 
+                                    <TextBlock Text="{DynamicResource t_saverules}"
                                                TextAlignment="Center"
-                                               TextWrapping="Wrap"/>
+                                               TextWrapping="Wrap" />
                                 </Button>
-                                
-                                <TextBlock Text="{Binding Source={StaticResource rulesViewModel}, Path=CurrentTitle}" 
+
+                                <TextBlock Text="{Binding Source={StaticResource rulesViewModel}, Path=CurrentTitle}"
                                            TextWrapping="Wrap"
                                            TextAlignment="Center"
                                            Margin="0,5,0,10"
                                            Background="{StaticResource WindowMainBackColor}"
                                            Foreground="{StaticResource BlackButtonContent}"
                                            Width="80"
-                                           Height="20"/>
+                                           Height="20" />
                             </StackPanel>
-
                         </StackPanel>
 
                         <Grid Grid.Row="1">
+                            
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-
+                            
                             <Button x:Name="Mark"
                                     Grid.Column="0"
                                     Width="100"
@@ -328,7 +371,7 @@
                                     Command="{Binding Source={StaticResource rulesViewModel}, Path=Unmark}">
                                 <TextBlock Text="{DynamicResource t_unmarktheWord}"
                                            TextWrapping="Wrap"
-                                           TextAlignment="Center"/>
+                                           TextAlignment="Center" />
                             </Button>
                             <Button x:Name="AssignSeparator"
                                     Grid.Column="2"
@@ -338,7 +381,7 @@
                                     Command="{Binding Source={StaticResource rulesViewModel}, Path=AssignSeparator}">
                                 <TextBlock Text="{DynamicResource t_assignseparator}"
                                            TextWrapping="Wrap"
-                                           TextAlignment="Center"/>
+                                           TextAlignment="Center" />
                             </Button>
                             <Button x:Name="MakeRule"
                                     Grid.Column="3"
@@ -354,7 +397,6 @@
                     </Grid>
                 </TabItem>
 
-                
                 <TabItem Header="{DynamicResource t_tabsettings}"
                          Style="{DynamicResource TabItemCustom}"
                          Foreground="{StaticResource WindowMainBackColor}"
@@ -362,6 +404,7 @@
                          Height="25"
                          Padding="0,5,0,0">
                     <Grid>
+                        
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"
                                               MinWidth="180" />
@@ -411,8 +454,6 @@
                         </StackPanel>
                     </Grid>
                 </TabItem>
-                
-                
             </TabControl>
         </Grid>
     </Grid>
